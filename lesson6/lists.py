@@ -79,7 +79,23 @@ users.sort()
 
 users.sort(key = str.lower)
  
- 
 print(users)
  
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# reversing list  in reverse order
+nums.reverse()
+
+nums.sort(reverse = True)
+
+numscopy = nums.copy()
+
+mynums = list(nums)
+
+print(nums)
+print(numscopy)
+print(mynums)
+
+
+print(type(nums))
 
