@@ -99,3 +99,15 @@ print(mynums)
 
 print(type(nums))
 
+# tuples are immutable  
+
+# tuple with constructor:
+mytuple = tuple(('David', "John", "Michael"))
+
+print(type(mytuple))
+
+# tuple without constructor:
+mytuple = (0, 1, 2, "John", "Michael")
+
+print(mytuple.count(1))
+print(mytuple.index(2)) 
