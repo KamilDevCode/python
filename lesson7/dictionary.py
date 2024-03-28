@@ -111,3 +111,81 @@ print(band["member1"]["name"])
 # print(member1["name"][])
 
 
+#  ----------Sets:-------------
+
+# 
+nums = {1,2,3}
+# constructor function:
+nums2 = set({4,5,6})
+print(nums)
+print(type(nums))
+print(nums2)
+print(type(nums2))
+print(len(nums2))
+
+# no duplicate allowed: duplicate are ignored
+
+nums  = {1,1,3,4,4}
+print(nums)
+
+
+"""
+
+In this case, when the set nums is created, duplicate values are removed. Both True and False are interpreted as boolean values, where False is equivalent to 0 and True is equivalent to 1. As a result, only one of them will be retained in the set because they are equal to each other.
+"""
+nums = {0, 1, True, "Kamil", 2,2,3, False, }
+
+print(nums)
+
+
+# check if value is in the set:
+print(2 in nums) # true 
+
+# adding number tinto the set:
+nums.add(20)
+print(nums)
+
+nums2 = {10,20,30,40}
+nums.update(nums2)
+print(nums)
+
+# update can be used with lists, tuples, sets and with dictionaries:
+
+lst = [1,2,3]
+nums.update(lst)
+print(nums)
+
+tup = (10,20,30)
+nums.update(tup)
+print(nums)
+
+dct = {"a":1, "b":2}
+nums.update(dct)
+print(nums)
+
+# merge two sets:
+
+one = {1,2,3,4,5,6,7,8,9,10}
+two ={11,1,2,11,12,13,14,15,16,17,18,19,20}
+
+# The union() method in Python is used to create a new set that contains all the unique elements from two or more sets. It combines the elements of the sets without any duplicates.
+newSet = one.union(two)
+
+print(newSet)
+
+#  keep only the elements that are present in both sets:
+
+newSet = one.intersection(two)
+print(newSet)   # print the intersection of two sets: {1,2}
+
+# keep only duplicate elements:
+
+one ={1,2,3}
+two ={1,2,3, 4,5,1}
+
+one.intersection_update(two)
+print(one)
+
+# keep everything except duplicates:
+one.symmetric_difference_update(two)
+print(one)
