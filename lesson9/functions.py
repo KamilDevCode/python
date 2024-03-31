@@ -27,3 +27,10 @@ def multiple_items(*args):
     print(type(args))
     
 multiple_items('Kamil', 'Adam', 'Jan')   
+
+def mult_named_items(**kwargs):
+    print(kwargs)
+    # dict
+    print(type(kwargs)) 
+    
+mult_named_items(first_name = 'Kamil', last_name = 'Lewandowski')
