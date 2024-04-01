@@ -42,3 +42,34 @@ def rock_paper_scissor():
         print("Ok, thanks for playing!")
 
 rock_paper_scissor()
+
+
+
+# ----------game with List comprehension:-----------
+import random
+choices = ["rock 🪨 ", "paper 📄", "scissors ✂️"]
+
+def play_rock_paper_scissors():
+    player_input = input("Please choose one of the following: \n1: rock, \n2: paper, \n3: scissors: \n\n")
+    player = int(player_input) 
+    
+    if player not in range(1,4):
+        print("Invalid choice. Please choose a number between 1 and 3.")
+        play_rock_paper_scissors()
+        
+    computer = random.choice(choices)
+    if player == choices.index(computer) + 1:
+        print("It's a tie! 🤝")
+    else:
+        print(f"You chose: {choices[player-1]} and Python chose: {computer} and you {['lost', 'won', 'tied'][player == computer or player != choices.index(computer) or player - choices.index(computer) or choices.index(computer) - player]} to Python 🐍")
+        
+        play_again_input = input("\nWould you like to play again? \nY for Yes or \nQ to Quit\n\n")
+    if play_again_input.lower() == "y":
+        play_rock_paper_scissors()
+    else:
+        print("\n🎉 🎉 ")
+        print("Ok, thanks for playing!")
+
+play_rock_paper_scissors()
+
+sys.exit("Bye! 👋")
