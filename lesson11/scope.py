@@ -21,10 +21,21 @@ favorite_color()
 
 # NameError: name 'color' is not defined
 # print(color)
+count = 1
 
 def another():
-    greeting(f'greeting from another function, Kamil')
+    color = 'black'
+    greeting(f'greeting from another function {name}')
     # we can call function in local scope another function (enclosing scope)
+    global count 
+    count+= 1
+    print(count)
+    
+    def some_func():
+        nonlocal color
+        color = "blue"
+        print(color)
+    some_func()
 another()
 
 
