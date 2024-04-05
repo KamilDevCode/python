@@ -17,11 +17,12 @@ def parent_func(person):
         nonlocal coins
         coins -= 1
         
-        if coins == 0:
-            print(f"{person} has no more coins")
-        else:
+        if coins > 1:
             print(f"{person} has {coins} coins left")
-            
+        elif coins == 1:
+            print(f"{person} has {coins} coins left")
+        else:
+            print(f"{person} has no more {coins} coins")
     return play_game
 
 
@@ -29,4 +30,7 @@ persons = ["Anna", "Bob", "Charlie"]
 play_game_functions = [parent_func(person) for person in persons]
 
 for play_game_function in play_game_functions:
+    play_game_function() # Wydrukuje: Anna has 2 coins Bob has 2 coins Charlie has 2 coins
     play_game_function()
+    play_game_function()
+   
