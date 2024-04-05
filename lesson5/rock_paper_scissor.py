@@ -58,4 +58,3 @@ while playagain:
         print("Ok, thanks for playing!")
         playagain = False
         
-sys.exit("Bye! 👋")
