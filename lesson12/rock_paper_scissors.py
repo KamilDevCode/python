@@ -3,6 +3,7 @@ import sys
 
 choices = ['rock 🪨', 'paper 📄', 'scissors ✂️']
 
+
 def rps():
     game_count = 0
     player_wins = 0
