@@ -1,14 +1,30 @@
-import argparse
-parser = argparse.ArgumentParser(
-    description='Provides a person greeting'
-)
+def hello(name, lang):
+    greetings = {
+        "English": "Hello",
+        "Spanish": "Hola",
+        "German": "Hallo",
+    }
+    msg = f"{greetings[lang]} {name}!"
+    print(msg)
 
-parser.add_argument(
-    "-n", "--name", metavar="name",
-    required = True, help = "the name of person to greet"
-)
+if '__name__ == __main__':
 
-args = parser.parse_args()
+    import argparse
+    parser = argparse.ArgumentParser(
+        description='Provides a person greeting'
+    )
 
-msg = f"Hello {args.name}!"
-print(msg)
+    parser.add_argument(
+        "-n", "--name", metavar="name",
+        required = True, help = "the name of person to greet"
+    )
+
+    parser.add_argument(
+        "-l", "--lang", metavar="language",
+        required = True, choices =["English", "Spanish", "German"],
+        help = "the language to greet"
+    )
+
+    args = parser.parse_args()
+
+    hello(args.name, args.lang)
