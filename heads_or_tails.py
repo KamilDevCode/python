@@ -40,8 +40,8 @@ while True:
         computer_score += 1
         print(f"Python won this round! 🐍: {computer_score}")
 
-    print(f'Twój wynik: {user_score}, Wynik komputera: {computer_score}')
+    print(f'Your score: {user_score}, Python score: {computer_score}')
 
-    play_again = input("Chcesz zagrać ponownie? [t/n] ")
-    if play_again.lower() != 't':
+    play_again = input("Would you like play again? [y/n] ")
+    if play_again.lower() != 'y':
         break
