@@ -1,20 +1,18 @@
-tasks = []
+from typing import List, Dict
 
+tasks: List[Dict[str, str]] = []
 
-def add_tasks(new_task=str, definition=str, priority=str):
-    if not new_task.strip():
-        print('You did not add task to the lists !')
-        return
-    elif not definition.strip():
-        print('You did not add definition to the lists !')
-        return
-    elif not priority.strip():
-        print('You did not add priority to the lists !')
-        return
-    elif new_task in tasks:
-        print(f"Task '{new_task}' already exists in the list.")
+def add_tasks(**task):
+    if task in tasks:
+        print(f'You did this task: {task} already, add task to the lists!')
         return
     else:
-        tasks.append({"name": new_task, "definition": definition, "priority": priority})
-        print(f'You added task: {new_task} with definition: {definition} and priority: {priority} to the list.')
+        tasks.append(task)
+        print(f'You added task: {task["name"]} with definition: {task["definition"]} and priority: {task["priority"]} to the list.')
         print(tasks)
+
+
+add_tasks(name="learn python", definition="OOP", priority="important")
+add_tasks(name = "learn python", definition="inheritance", priority="important")
+
+print(tasks)
